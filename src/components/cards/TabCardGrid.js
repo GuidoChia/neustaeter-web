@@ -145,7 +145,8 @@ export default ({
     ],
     Tinglados: getRandomCards(),
     Silos: getRandomCards(),
-    Molinos: getRandomCards()
+    Molinos: getRandomCards(),
+    Tanques: getRandomCards()
   }
 }) => {
   /*
