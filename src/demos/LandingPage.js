@@ -5,10 +5,7 @@ import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import Hero from "components/hero/TwoColumnWithVideo.js";
 import Features from "components/features/ThreeColSimple.js";
 import MainFeature from "components/features/TwoColWithButton.js";
-import MainFeature2 from "components/features/TwoColSingleFeatureWithStats2.js";
 import TabGrid from "components/cards/TabCardGrid.js";
-import Testimonial from "components/testimonials/ThreeColumnWithProfileImage.js";
-import DownloadApp from "components/cta/DownloadApp.js";
 import Footer from "components/footers/MiniCenteredFooter.js";
 
 import chefIconImageSrc from "images/chef-icon.svg";
@@ -19,7 +16,7 @@ import galponTwoImageSrc from "images/products/galpon2.jpg";
 
 export default () => {
   const Subheading = tw.span`tracking-wider text-sm font-medium`;
-  const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
+  const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12`;
   const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
   const Description = tw.span`inline-block mt-8`;
   const imageCss = tw`rounded-4xl`;
@@ -34,14 +31,14 @@ export default () => {
         description="Metalurgia de confianza desde la colonia menonita"
         imageSrc={galponOneImageSrc}
         imageCss={imageCss}
-        imageDecoratorBlob={true}
       />
       <MainFeature
         subheading={<Subheading>Establecidos en 2010</Subheading>}
         heading={
           <>
             Trabajando hace
-            <wbr /> <HighlightedText>más de 10 años.</HighlightedText>
+            <br />
+            <HighlightedText>más de 10 años.</HighlightedText>
           </>
         }
         description={
@@ -59,7 +56,6 @@ export default () => {
         primaryButtonText="Latest Offers"
         imageSrc={galponTwoImageSrc}
         imageCss={imageCss}
-        imageDecoratorBlob={true}
         imageDecoratorBlobCss={tw`left-1/2 -translate-x-1/2 md:w-32 md:h-32 opacity-25`}
       />
       {/* TabGrid Component also accepts a tabs prop to customize the tabs and its content directly. Please open the TabGrid component file to see the structure of the tabs props.*/}
