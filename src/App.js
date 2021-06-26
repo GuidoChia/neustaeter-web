@@ -30,19 +30,20 @@ import AnimationRevealPage from "helpers/AnimationRevealPage";
 import AboutUs from "pages/AboutUs";
 import ContactUs from "pages/ContactUs";
 
+
 export default function App() {
   // return <AnimationRevealPage disabled></AnimationRevealPage>;
   return (
     <Router>
       <Switch>
-        <Route path="/productos">
-          <AnimationRevealPage>
+        <Route path="/productos" >
+          <AnimationRevealPage disabled>
             <Header />
             <TabCardGrid heading="Productos" />
             <Footer />
           </AnimationRevealPage>
         </Route>
-        <Route path="/quienessomos">
+        <Route path="/contacto">
           <ContactUs />
         </Route>
         <Route path="/">

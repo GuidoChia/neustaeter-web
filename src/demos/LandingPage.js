@@ -7,6 +7,7 @@ import Features from "components/features/ThreeColSimple.js";
 import MainFeature from "components/features/TwoColWithButton.js";
 import TabGrid from "components/cards/TabCardGrid.js";
 import Footer from "components/footers/MiniCenteredFooter.js";
+import ContactUsForm from "components/forms/SimpleContactUs.js";
 
 import chefIconImageSrc from "images/chef-icon.svg";
 import celebrationIconImageSrc from "images/celebration-icon.svg";
@@ -21,19 +22,19 @@ export default () => {
   const Description = tw.span`inline-block mt-8`;
   const imageCss = tw`rounded-4xl`;
   return (
-    <AnimationRevealPage>
+    <AnimationRevealPage disabled>
       <Hero
         heading={
           <>
-            Metalurgia <HighlightedText>Neustaeter</HighlightedText>
+            Metalurgia <HighlightedText>Menonita</HighlightedText>
           </>
         }
-        description="Metalurgia de confianza desde la colonia menonita"
+        description="Metalurgia de confianza desde la colonia menonita."
         imageSrc={galponOneImageSrc}
         imageCss={imageCss}
       />
       <MainFeature
-        subheading={<Subheading>Establecidos en 2010</Subheading>}
+        subheading={<Subheading>Establecidos en AÑO</Subheading>}
         heading={
           <>
             Trabajando hace
@@ -60,35 +61,7 @@ export default () => {
       />
       {/* TabGrid Component also accepts a tabs prop to customize the tabs and its content directly. Please open the TabGrid component file to see the structure of the tabs props.*/}
       <TabGrid heading={<>Nuestros productos</>} />
-      <Features
-        heading={
-          <>
-            Amazing <HighlightedText>Services.</HighlightedText>
-          </>
-        }
-        cards={[
-          {
-            imageSrc: shopIconImageSrc,
-            title: "230+ Locations",
-            description: "Lorem ipsum donor amet siti ceali placeholder text",
-            url: "https://google.com",
-          },
-          {
-            imageSrc: chefIconImageSrc,
-            title: "Professional Chefs",
-            description: "Lorem ipsum donor amet siti ceali placeholder text",
-            url: "https://timerse.com",
-          },
-          {
-            imageSrc: celebrationIconImageSrc,
-            title: "Birthday Catering",
-            description: "Lorem ipsum donor amet siti ceali placeholder text",
-            url: "https://reddit.com",
-          },
-        ]}
-        imageContainerCss={tw`p-2!`}
-        imageCss={tw`w-20! h-20!`}
-      />
+      <ContactUsForm/>
       <Footer />
     </AnimationRevealPage>
   );

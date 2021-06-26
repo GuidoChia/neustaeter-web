@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import {ReactComponent as SvgDotPatternIcon} from "../../images/dot-pattern.svg"
+import { send } from 'emailjs-com';
 
 const Container = tw.div`relative`;
 const Content = tw.div`max-w-screen-xl mx-auto py-20 lg:py-24`;
@@ -35,34 +36,64 @@ const SubmitButton = tw.button`w-full sm:w-32 mt-6 py-3 bg-gray-100 text-primary
 const SvgDotPattern1 = tw(SvgDotPatternIcon)`absolute bottom-0 right-0 transform translate-y-1/2 translate-x-1/2 -z-10 opacity-50 text-primary-500 fill-current w-24`
 
 export default () => {
+  const [toSend, setToSend] = useState({
+    from_name: '',
+    phone: '',
+    message: '',
+    email: '',
+  });
+  const[showSuccess, setShowSucces]=useState(false);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    send(
+      'service_rhpb7bb',
+      'template_ikpynsz',
+      toSend,
+      'user_jqufnScrkZVF1RuCIytqr'
+    )
+      .then((response) => {
+        setShowSucces(true);
+        console.log('SUCCESS!', response.status, response.text);
+      })
+      .catch((err) => {
+        console.log('FAILED...', err);
+      });
+  };
+  const handleChange = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
   return (
     <Container>
       <Content>
         <FormContainer>
           <div tw="mx-auto max-w-4xl">
-            <h2>Organize an Event</h2>
-            <form action="#">
+            <h2>Contactanos</h2>
+            <form onSubmit={onSubmit}>
               <TwoColumn>
                 <Column>
                   <InputContainer>
-                    <Label htmlFor="name-input">Your Name</Label>
-                    <Input id="name-input" type="text" name="name" placeholder="E.g. John Doe" />
+                    <Label htmlFor="name-input">Tu nombre</Label>
+                    <Input id="name-input" type="text" name="from_name" placeholder="Juan Perez" value={toSend.from_name} onChange={handleChange}/>
                   </InputContainer>
                   <InputContainer>
-                    <Label htmlFor="email-input">Your Email Address</Label>
-                    <Input id="email-input" type="email" name="email" placeholder="E.g. john@mail.com" />
+                    <Label htmlFor="email-input">Tu email</Label>
+                    <Input id="email-input" type="email" name="email" placeholder="juanperez@gmail.com" value={toSend.email} onChange={handleChange} />
+                  </InputContainer>
+                  <InputContainer>
+                    <Label htmlFor="email-input">Tu teléfono</Label>
+                    <Input id="phone-input" type="number" name="phone" placeholder="2954 010203" value={toSend.phone} onChange={handleChange}/>
                   </InputContainer>
                 </Column>
                 <Column>
                   <InputContainer tw="flex-1">
-                    <Label htmlFor="name-input">Your Message</Label>
-                    <TextArea id="message-input" name="message" placeholder="E.g. Details about your event"/>
+                    <Label htmlFor="name-input">Tu consulta</Label>
+                    <TextArea id="message-input" type="text" name="message" placeholder="Mensaje" value={toSend.message} onChange={handleChange}/>
                   </InputContainer>
                 </Column>
               </TwoColumn>
-
-              <SubmitButton type="submit" value="Submit">Submit</SubmitButton>
+              <SubmitButton type="submit" value="Submit">Enviar</SubmitButton>
             </form>
+            {showSuccess?<h1>Mail enviado correctamente</h1>:<div></div>}
           </div>
           <SvgDotPattern1 />
         </FormContainer>
