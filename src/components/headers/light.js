@@ -90,7 +90,7 @@ export default ({
   const defaultLogoLink = (
     <LogoLink href="/">
       <img src={logo} alt="logo" />
-      Metalurgia Neustaeter
+      Metalurgia Menonita
     </LogoLink>
   );
 
