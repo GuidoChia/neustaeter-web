@@ -1,4 +1,6 @@
-import "tailwindcss/dist/base.css";
+//import "tailwindcss/dist/base.css";
+import "tailwindcss/dist/tailwind.css";
+
 import "styles/globalStyles.css";
 import React from "react";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -30,13 +32,12 @@ import AnimationRevealPage from "helpers/AnimationRevealPage";
 import AboutUs from "pages/AboutUs";
 import ContactUs from "pages/ContactUs";
 
-
 export default function App() {
   // return <AnimationRevealPage disabled></AnimationRevealPage>;
   return (
     <Router>
       <Switch>
-        <Route path="/productos" >
+        <Route path="/productos">
           <AnimationRevealPage disabled>
             <Header />
             <TabCardGrid heading="Productos" />

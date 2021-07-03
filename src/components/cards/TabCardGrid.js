@@ -9,6 +9,27 @@ import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import { ReactComponent as StarIcon } from "images/star-icon.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7.svg";
+import Galpon1Src from "images/products/galpones y tinglados/galpon1.jpg";
+import Galpon2Src from "images/products/galpones y tinglados/galpon2.jpg";
+import Galpon3Src from "images/products/galpones y tinglados/galpon9.jpg";
+import Galpon4Src from "images/products/galpones y tinglados/galpon10.jpg";
+import Galpon5Src from "images/products/galpones y tinglados/galpon11.jpg";
+import Tinglado1Src from "images/products/galpones y tinglados/tinglado1.jpg";
+import Tinglado2Src from "images/products/galpones y tinglados/tinglado2.jpg";
+import Carro1Src from "images/products/carros y sinfin/carro1.jpg";
+import Carro2Src from "images/products/carros y sinfin/carro3.jpg";
+import Carro3Src from "images/products/carros y sinfin/carro4.jpg";
+import Carro4Src from "images/products/carros y sinfin/carro2.jpg";
+import Sinfin1Src from "images/products/carros y sinfin/sinfin1.jpg";
+import Sinfin2Src from "images/products/carros y sinfin/sinfin2.jpg";
+import SiloComedero1Src from "images/products/silos/silo comedero autoconsumo/comedero1.jpg";
+import SiloComedero2Src from "images/products/silos/silo comedero autoconsumo/comedero2.jpg";
+import SiloComedero3Src from "images/products/silos/silo comedero autoconsumo/comedero3.jpg";
+import SiloComedero4Src from "images/products/silos/silo comedero autoconsumo/comedero4.jpeg";
+import SiloAereo1Src from "images/products/silos/silos aereos/siloaereo1.jpg";
+import SiloAereo2Src from "images/products/silos/silos aereos/siloaereo2.jpg";
+import SiloAereo3Src from "images/products/silos/silos aereos/siloaereo4.jpg";
+import SiloFertilizante1Src from "images/products/silos/silo para fertilizante/fertilizante1.jpg";
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`;
 const Header = tw(SectionHeading)``;
@@ -70,88 +91,130 @@ export default ({
   tabs = {
     "Galpones y tinglados": [
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Veg Mixer",
-        content: "Tomato Salad & Carrot",
-        price: "Consultar",
-        rating: "5.0",
-        reviews: "87",
-        url: "#",
+        imageSrc: Galpon1Src,
+        title: "Galpón",
+        content: "20m x 15m",
+        url: "/contacto",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Macaroni",
-        content: "Cheese Pizza",
-        price: "Consultar",
-        rating: "4.8",
-        reviews: "32",
-        url: "#",
+        imageSrc: Galpon2Src,
+        title: "Galpón",
+        content: "10m x 15m",
+        url: "/contacto",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327??ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Nelli",
-        content: "Hamburger & Fries",
-        price: "Consultar",
-        rating: "4.9",
-        reviews: "89",
-        url: "#",
+        imageSrc: Galpon3Src,
+        title: "Galpón",
+        content: "15m x 10m. Altura especial: 7.5m a 8.5m",
+        url: "/contacto",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Jalapeno Poppers",
-        content: "Crispy Soyabeans",
-        price: "$8.99",
-        rating: "4.6",
-        reviews: "12",
-        url: "#",
+        imageSrc: Galpon4Src,
+        title: "Galpón",
+        content: "6m x 12m.",
+        url: "/contacto",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Cajun Chicken",
-        content: "Roasted Chicken & Egg",
-        price: "$7.99",
-        rating: "4.2",
-        reviews: "19",
-        url: "#",
+        imageSrc: Galpon5Src,
+        title: "Galpón",
+        content: "6m x 12m.",
+        url: "/contacto",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1550461716-dbf266b2a8a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Chillie Cake",
-        content: "Deepfried Chicken",
-        price: "$2.99",
-        rating: "5.0",
-        reviews: "61",
-        url: "#",
+        imageSrc: Tinglado1Src,
+        title: "Tinglado",
+        content: "10m x 30m con alero de 8m",
+        url: "/contacto",
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Guacamole Mex",
-        content: "Mexican Chilli",
-        price: "$3.99",
-        rating: "4.2",
-        reviews: "95",
-        url: "#",
-      },
-      {
-        imageSrc:
-          "https://images.unsplash.com/photo-1565310022184-f23a884f29da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-        title: "Carnet Nachos",
-        content: "Chilli Crispy Nachos",
-        price: "$3.99",
-        rating: "3.9",
-        reviews: "26",
-        url: "#",
+        imageSrc: Tinglado2Src,
+        title: "Tinglado",
+        content: "5m x 8m",
+        url: "/contacto",
       },
     ],
-    "Carros y sinfines": getRandomCards(),
-    Silos: getRandomCards(),
+    "Carros y sinfines": [
+      {
+        imageSrc: Carro1Src,
+        title: "Carro con sinfin",
+        content: "",
+        url: "/contacto",
+      },
+      {
+        imageSrc: Carro2Src,
+        title: "Carro cerealero",
+        content: "",
+        url: "/contacto",
+      },
+      {
+        imageSrc: Carro3Src,
+        title: "Carro para hacienda",
+        content: "",
+        url: "/contacto",
+      },
+      {
+        imageSrc: Carro4Src,
+        title: "Carrito para rollos",
+        content: "",
+        url: "/contacto",
+      },
+      {
+        imageSrc: Sinfin1Src,
+        title: "Sinfin",
+        content: "7m a 16 m",
+        url: "/contacto",
+      },
+    ],
+    Silos: [
+      {
+        imageSrc: SiloComedero1Src,
+        title: "Silo comedero",
+        content: "18 toneladas",
+        url: "/contacto",
+      },
+      {
+        imageSrc: SiloComedero2Src,
+        title: "Silo comedero",
+        content: "12 toneladas",
+        url: "/contacto",
+      },
+      {
+        imageSrc: SiloComedero3Src,
+        title: "Silo comedero",
+        content: "18 toneladas",
+        url: "/contacto",
+      },
+      {
+        imageSrc: SiloComedero4Src,
+        title: "Silo comedero",
+        content: "12 toneladas",
+        url: "/contacto",
+      },
+      {
+        imageSrc: SiloAereo1Src,
+        title: "Silo aereo",
+        content: "60 toneladas y 40 toneladas",
+        url: "/contacto",
+      },
+      {
+        imageSrc: SiloAereo2Src,
+        title: "Silo aereo",
+        content: "Estructura métalica para descarga de cereal",
+        url: "/contacto",
+      },
+      {
+        imageSrc: SiloAereo3Src,
+        title: "Silo para fertilizante",
+        content: "",
+        url: "/contacto",
+      },
+      {
+        imageSrc: SiloFertilizante1Src,
+        title: "Silo para fertilizante",
+        content: "",
+        url: "/contacto",
+      },
+    ],
   },
 }) => {
   /*
@@ -209,13 +272,6 @@ export default ({
                   animate="rest"
                 >
                   <CardImageContainer imageSrc={card.imageSrc}>
-                    <CardRatingContainer>
-                      <CardRating>
-                        <StarIcon />
-                        {card.rating}
-                      </CardRating>
-                      <CardReview>({card.reviews})</CardReview>
-                    </CardRatingContainer>
                     <CardHoverOverlay
                       variants={{
                         hover: {
@@ -229,13 +285,12 @@ export default ({
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <CardButton>Buy Now</CardButton>
+                      <CardButton>Consultar</CardButton>
                     </CardHoverOverlay>
                   </CardImageContainer>
                   <CardText>
                     <CardTitle>{card.title}</CardTitle>
                     <CardContent>{card.content}</CardContent>
-                    <CardPrice>{card.price}</CardPrice>
                   </CardText>
                 </Card>
               </CardContainer>

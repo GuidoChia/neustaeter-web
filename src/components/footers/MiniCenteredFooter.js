@@ -36,7 +36,7 @@ export default () => {
         <Row>
           <LogoContainer>
             <LogoImg src={logo} />
-            <LogoText> Metalurgia Neustaeter</LogoText>
+            <LogoText> Metal Menonita</LogoText>
           </LogoContainer>
           <LinksContainer>
             <Link href="#">Inicio</Link>

@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import {ReactComponent as SvgDotPatternIcon} from "../../images/dot-pattern.svg"
-import { send } from 'emailjs-com';
+import { ReactComponent as SvgDotPatternIcon } from "../../images/dot-pattern.svg";
+import { send } from "emailjs-com";
 
 const Container = tw.div`relative`;
-const Content = tw.div`max-w-screen-xl mx-auto py-20 lg:py-24`;
+const Content = tw.div`max-w-screen-xl mx-auto py-12 lg:py-6`;
 
 const FormContainer = styled.div`
   ${tw`p-10 sm:p-12 md:p-16 bg-primary-500 text-gray-100 rounded-lg relative`}
@@ -16,7 +16,8 @@ const FormContainer = styled.div`
   h2 {
     ${tw`text-3xl sm:text-4xl font-bold`}
   }
-  input,textarea {
+  input,
+  textarea {
     ${tw`w-full bg-transparent text-gray-100 text-base font-medium tracking-wide border-b-2 py-2 text-gray-100 hocus:border-pink-400 focus:outline-none transition duration-200`};
 
     ::placeholder {
@@ -33,30 +34,35 @@ const Input = tw.input``;
 const TextArea = tw.textarea`h-24 sm:h-full resize-none`;
 const SubmitButton = tw.button`w-full sm:w-32 mt-6 py-3 bg-gray-100 text-primary-500 rounded-full font-bold tracking-wide shadow-lg uppercase text-sm transition duration-300 transform focus:outline-none focus:shadow-outline hover:bg-gray-300 hover:text-primary-700 hocus:-translate-y-px hocus:shadow-xl`;
 
-const SvgDotPattern1 = tw(SvgDotPatternIcon)`absolute bottom-0 right-0 transform translate-y-1/2 translate-x-1/2 -z-10 opacity-50 text-primary-500 fill-current w-24`
+const SvgDotPattern1 = tw(
+  SvgDotPatternIcon
+)`absolute bottom-0 right-0 transform translate-y-1/2 translate-x-1/2 -z-10 opacity-50 text-primary-500 fill-current w-24`;
+
+const LoadingButton = tw.button`bg-red-600`;
+const SvgLoading = tw.svg`animate-spin h-5 w-5 mr-3 `;
 
 export default () => {
   const [toSend, setToSend] = useState({
-    from_name: '',
-    phone: '',
-    message: '',
-    email: '',
+    from_name: "",
+    phone: "",
+    message: "",
+    email: "",
   });
-  const[showSuccess, setShowSucces]=useState(false);
+  const [showSuccess, setShowSucces] = useState(false);
   const onSubmit = (e) => {
     e.preventDefault();
     send(
-      'service_rhpb7bb',
-      'template_ikpynsz',
+      "service_rhpb7bb",
+      "template_ikpynsz",
       toSend,
-      'user_jqufnScrkZVF1RuCIytqr'
+      "user_jqufnScrkZVF1RuCIytqr"
     )
       .then((response) => {
         setShowSucces(true);
-        console.log('SUCCESS!', response.status, response.text);
+        console.log("SUCCESS!", response.status, response.text);
       })
       .catch((err) => {
-        console.log('FAILED...', err);
+        console.log("FAILED...", err);
       });
   };
   const handleChange = (e) => {
@@ -73,27 +79,60 @@ export default () => {
                 <Column>
                   <InputContainer>
                     <Label htmlFor="name-input">Tu nombre</Label>
-                    <Input id="name-input" type="text" name="from_name" placeholder="Juan Perez" value={toSend.from_name} onChange={handleChange}/>
-                  </InputContainer>
-                  <InputContainer>
-                    <Label htmlFor="email-input">Tu email</Label>
-                    <Input id="email-input" type="email" name="email" placeholder="juanperez@gmail.com" value={toSend.email} onChange={handleChange} />
+                    <Input
+                      id="name-input"
+                      type="text"
+                      name="from_name"
+                      placeholder="Nombre"
+                      value={toSend.from_name}
+                      onChange={handleChange}
+                    />
                   </InputContainer>
                   <InputContainer>
                     <Label htmlFor="email-input">Tu teléfono</Label>
-                    <Input id="phone-input" type="number" name="phone" placeholder="2954 010203" value={toSend.phone} onChange={handleChange}/>
+                    <Input
+                      id="phone-input"
+                      type="number"
+                      name="phone"
+                      placeholder="Contacto"
+                      value={toSend.phone}
+                      onChange={handleChange}
+                    />
+                  </InputContainer>
+                  <InputContainer>
+                    <Label htmlFor="email-input">Tu email (opcional)</Label>
+                    <Input
+                      id="email-input"
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      value={toSend.email}
+                      onChange={handleChange}
+                    />
                   </InputContainer>
                 </Column>
                 <Column>
                   <InputContainer tw="flex-1">
                     <Label htmlFor="name-input">Tu consulta</Label>
-                    <TextArea id="message-input" type="text" name="message" placeholder="Mensaje" value={toSend.message} onChange={handleChange}/>
+                    <TextArea
+                      id="message-input"
+                      type="text"
+                      name="message"
+                      placeholder="Mensaje"
+                      value={toSend.message}
+                      onChange={handleChange}
+                    />
                   </InputContainer>
                 </Column>
               </TwoColumn>
-              <SubmitButton type="submit" value="Submit">Enviar</SubmitButton>
+              <SubmitButton type="submit" value="Submit">
+                Enviar
+              </SubmitButton>
+              <LoadingButton>
+                <SvgLoading></SvgLoading>Cargando
+              </LoadingButton>
             </form>
-            {showSuccess?<h1>Mail enviado correctamente</h1>:<div></div>}
+            {showSuccess ? <h1>Mail enviado correctamente</h1> : <div></div>}
           </div>
           <SvgDotPattern1 />
         </FormContainer>
