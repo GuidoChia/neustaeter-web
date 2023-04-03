@@ -1,3 +1,12 @@
+# Neustaeter Web
+This repository contains a website designed for a manufacturer of metal sheds and silos. The website has been developed to showcase the manufacturer's products and provide potential customers with a convenient way to contact them.
+
+The website features a variety of metal sheds and silos with detailed information such as pricing, specifications, and images. The user-friendly interface allows visitors to navigate the website with ease, find the products they are interested in, and contact the manufacturer through a contact form or phone number provided on the website.
+
+To enhance user experience, the website is optimized for mobile devices, ensuring that customers can access it from anywhere. The website also loads quickly, providing a seamless experience to the users.
+
+Overall, this website serves as an effective marketing tool for the manufacturer, enhancing their online presence and credibility, while providing a platform for potential customers to access product information and contact the manufacturer.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
